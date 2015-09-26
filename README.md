@@ -1,2 +1,2 @@
 # Proyectos
-Proyectos hechos durante la universidad
+Proyectos hechos en diferentes lenguajes
