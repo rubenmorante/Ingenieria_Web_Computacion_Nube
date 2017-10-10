@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title>Flickr</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.css">
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="page-header">
+            <h1>Información consumida de un servicio web público: Flickr</h1>
+        </div>
+
+        <div class="collapse" id="searchParamsPanel">
+            <div class="panel panel-default">
+                <div class="panel-heading">Parámetros de busqueda</div>
+                <div class="panel-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="txtMin_taken_date">Fecha minima de captura:</label>
+                                    <input id="txtMin_taken_date" class="form-control fecha">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtMax_taken_date">Fecha maxima de captura:</label>
+                                    <input id="txtMax_taken_date" class="form-control fecha">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtMin_upload_date">Fecha minima de actualizacion:</label>
+                                    <input id="txtMin_upload_date" class="form-control fecha">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="txtMax_upload_date">Fecha maxima de actualizacion:</label>
+                                    <input id="txtMax_upload_date" class="form-control fecha">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtGroup_id">Tags:</label>
+                                    <input type="text" class="form-control" id="txtGroup_id">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtText">Contiene la palabra:</label>
+                                    <input type="text" class="form-control" id="txtText">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default" data-toggle="collapse" data-target="#searchParamsPanel" type="button">
+            Busqueda Avanzada
+        </button>
+        <button class="btn btn-success buscar" type="button">Buscar</button>
+        <div>
+            <section id="resultados-busqueda">
+                <div class="clearfix"></div>
+            </section>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="imagen-ampliada" src="">
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.2.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="credencialesFlickr.js"></script>
+    <script src="app.js" ></script>
+    </body>
+</html>
