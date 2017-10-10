@@ -18,6 +18,11 @@ h1 {
 	font-weight: 300;
 }
 
+h3 {
+	line-height: 0.5em;
+	margin: 15px 0;
+}
+
 p {
 	margin: 0 0 1.5em 0;
 }
@@ -97,15 +102,31 @@ nav {
 
 #main-content {
 	background: white;
-	width: 90%;
-	max-width: 800px;
-	margin: 20px auto;
-	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	width: 90%; /*solo puede ser el 90% del ancho total del navegador como mucho*/
+	max-width: 800px; /*el maximo de la pantalla*/
+	margin: 20px auto; /*anchura margenes*/
+	box-shadow: 0 0 10px rgba(0,0,0,.1);/*caja del margen*/
 }
  
 	#main-content header,
 	#main-content .content {
 		padding: 40px;
+	}
+
+	#main-content .imgbackground {
+		background-image: url(images/plantilla.jpg);
+	}
+
+	#main-content .imgprofile {	
+		max-width: 100%;
+		width: 20%;
+
+		display: block;
+		margin: auto;
+
+		padding: 0;
+		border-radius: 1000px;
+		overflow: hidden;
 	}
 
 #main-footer {
