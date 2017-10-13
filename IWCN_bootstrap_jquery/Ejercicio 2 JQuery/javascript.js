@@ -13,12 +13,12 @@ function myFunction() {
 	document.getElementById("messagePopup").innerText=message;
 
 	if(fname && lname && email && message){
-		popup.className='visible';
+		popup.classList.add('visible');
 	}
 }
 
 
 function cerrar(){
 
-	$('#popup').removeClass('visible');
+	document.getElementById("popup").classList.remove('visible');
 }
