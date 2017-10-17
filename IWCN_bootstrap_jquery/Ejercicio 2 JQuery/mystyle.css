@@ -10,11 +10,11 @@
 }
 
 .popup {
-	/*visibility: hidden;*/
-	display:none;
+	visibility: hidden;
+	/*display:none;*/
 }
-
+/*
 .popup.visible {
 	display:block;
 	position:absolute;
-}
+}*/

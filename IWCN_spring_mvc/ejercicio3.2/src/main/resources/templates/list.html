@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Lista de productos</title>
+	</head>
+	<body>
+		<h1>Listado de productos</h1>
+		<ul>
+			<li th:each="product : ${products}">
+				<a th:href="@{/show(numProduct=${productStat.index})}"><span th:text="${product.name}"></span></a>[<a th:href="@{/delete(numProduct=${productStat.index})}">Borrar</a>]</li>
+		</ul>
+		
+		<a href="/">Volver</a>
+	</body>
+</html>

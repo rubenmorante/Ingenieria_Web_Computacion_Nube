@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Añadir producto</title>
+	</head>
+	<body>
+		<h1>Añadir producto</h1>
+		<form action="/add" method="post">
+			<p>
+				<b>Codigo numérico:</b><input type="number" name="numCode"/>
+			</p>
+			<p>
+				<b>Nombre:</b><input type="text" name="name"/>
+			</p>
+			<p>
+				<b>Descripción:</b><input type="text" name="description"/>
+			</p>			
+			<p>
+				<b>Precio:</b><input type="number" name="price"/>
+			</p>			
+			
+			<input type="submit" name="add" value="Añadir"/>
+		</form>
+		<a href="/">Volver</a>
+	</body>
+</html>
