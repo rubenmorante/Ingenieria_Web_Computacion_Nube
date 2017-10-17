@@ -1,26 +1,69 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Añadir producto</title>
+		<link rel="StyleSheet" href="/css/mystyle.css"/>
+		
+		<title th:text="#{titleAddProduct}"></title>
 	</head>
-	<body>
-		<h1>Añadir producto</h1>
-		<form action="/add" method="post">
-			<p>
-				<b>Codigo numérico:</b><input type="number" name="numCode"/>
-			</p>
-			<p>
-				<b>Nombre:</b><input type="text" name="name"/>
-			</p>
-			<p>
-				<b>Descripción:</b><input type="text" name="description"/>
-			</p>			
-			<p>
-				<b>Precio:</b><input type="number" name="price"/>
-			</p>			
-			
-			<input type="submit" name="add" value="Añadir"/>
-		</form>
-		<a href="/">Volver</a>
+	<body>	
+		<header id="main-header">
+			<a id="logo-header" href="/">
+				<span class="site-name" th:text="#{titleIndex}"></span>
+				<span class="site-desc" th:text="#{nameAuthor}"></span>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="/" title="#{goToStart}" th:text="#{start}"></a></li>
+					<li><a href="/list.html" title="#{goToProductList}" th:text="#{listOfProducts}"></a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section id="main-content">
+			<div class="content">
+				<h1 th:text="#{addProduct}"></h1>
+				<div class="row col-md-2">
+					<form action="/add" method="post">				
+						<div class="row">
+							<div class="col-md-1">
+								<b th:text="#{numberCode} + ':'"></b>
+							</div>
+							<div class="col-md-1">
+								<input type="number" name="numCode" required="required"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<b th:text="#{name} + ':'"></b>
+							</div>
+							<div class="col-md-1">					
+								<input type="text" name="name" required="required"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<b th:text="#{description} + ':'"></b>
+							</div>
+							<div class="col-md-1">
+								<input type="text" name="des" required="required"/>	
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">		
+								<b th:text="#{price} + ':'"></b>
+							</div>
+							<div class="col-md-1">
+								<input type="number" name="price" required="required"/>			
+							</div>
+						</div>
+							
+						<br>
+							
+						<input type="submit" name="add" value="Añadir"/>
+					</form>
+				</div>
+				<a href="/" th:text="#{return}"></a>
+			</div>
+		</section>
 	</body>
 </html>

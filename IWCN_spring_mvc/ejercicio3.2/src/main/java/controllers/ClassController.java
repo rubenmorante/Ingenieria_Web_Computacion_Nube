@@ -21,7 +21,7 @@ public class ClassController {
 	}
 	
 	@RequestMapping("/add")
-	public String add(Product product, Model model) {
+	public String add(Product product) {
 		this.productService.add(product);
 		return "index";
 	}
