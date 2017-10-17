@@ -8,3 +8,13 @@
 	font-size: 35px;
 	color: #36A0FF;
 }
+
+.popup {
+	visibility: hidden;
+	/*display:none;*/
+}
+/*
+.popup.visible {
+	display:block;
+	position:absolute;
+}*/

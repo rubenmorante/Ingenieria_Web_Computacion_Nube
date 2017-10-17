@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Mostrar</title>
+	</head>
+	<body>
+	
+		<h1>Producto</h1>
+	
+		<p th:text="'Código Numérico:' + ${product.numCode}" />
+		<p th:text="'Nombre:' + ${product.name}" />
+		<p th:text="'Descripción:' + ${product.description}" />
+		<p th:text="'Precio:' + ${product.price}" />
+	
+		<a href="/list">Volver</a>
+	</body>
+</html>
