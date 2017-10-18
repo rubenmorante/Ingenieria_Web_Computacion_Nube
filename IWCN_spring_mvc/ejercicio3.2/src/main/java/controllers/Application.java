@@ -8,14 +8,16 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import services.ProductService;
 
 @SpringBootApplication
-public class Application {
-
+public class Application extends WebMvcConfigurerAdapter {	
+	
 	@Bean
 	public ProductService productService(){
 		return new ProductService();
@@ -40,6 +42,11 @@ public class Application {
 		LocaleChangeInterceptor result = new LocaleChangeInterceptor();
 		result.setParamName("lang");
 		return result;
+	}
+	
+	@Override
+	public void addInterceptors (InterceptorRegistry registry) {
+		registry.addInterceptor(localeChangeInterceptor());
 	}
 	
 	public static void main(String[] args) {
