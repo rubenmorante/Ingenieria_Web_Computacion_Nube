@@ -26,14 +26,14 @@ public class Application extends WebMvcConfigurerAdapter {
 	@Bean
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-		messageSource.setBasename("message");
+		messageSource.setBasename("messages");//messages is the name of the properties file
 		return messageSource;
 	}
 	
 	@Bean
 	public LocaleResolver localeResolver() {
 		SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
-		sessionLocaleResolver.setDefaultLocale(Locale.ENGLISH);
+		sessionLocaleResolver.setDefaultLocale(Locale.ENGLISH);//the default language 
 		return sessionLocaleResolver;
 	}
 	
