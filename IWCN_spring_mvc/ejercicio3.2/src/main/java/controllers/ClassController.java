@@ -16,8 +16,13 @@ public class ClassController {
 	private ProductService productService;
 	
 	@RequestMapping("/")
-	public String tablon() {			
+	public String index() {			
 		return "index";
+	}
+	
+	@RequestMapping("/addProduct")
+	public String addProduct() {			
+		return "addProduct";
 	}
 	
 	@RequestMapping("/add")
