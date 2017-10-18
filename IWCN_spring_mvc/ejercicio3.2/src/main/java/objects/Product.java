@@ -1,24 +1,15 @@
-package services;
+package objects;
 
 public class Product {
 
 	int numCode;
 	String name;
-	String description;
+	String des;
 	double price;
 	
 	public Product() {
-		// TODO Auto-generated constructor stub
 	}	
-/*
-	public Product(int numCode, String name, String description, double price) {
-		super();
-		this.numCode = numCode;
-		this.name = name;
-		this.description = description;
-		this.price = price;
-	}
-*/
+	
 	public int getNumCode() {
 		return numCode;
 	}
@@ -35,12 +26,12 @@ public class Product {
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDes() {
+		return des;
 	}
 
-	public void setDescripction(String description) {
-		this.description = description;
+	public void setDes(String des) {
+		this.des = des;
 	}
 
 	public double getPrice() {

@@ -4,6 +4,8 @@ import java.util.LinkedList;
 
 import org.springframework.stereotype.Service;
 
+import objects.Product;
+
 @Service
 public class ProductService {
 

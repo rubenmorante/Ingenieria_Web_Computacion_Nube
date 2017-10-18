@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import services.Product;
+import objects.Product;
 import services.ProductService;
 
 @Controller
@@ -16,12 +16,17 @@ public class ClassController {
 	private ProductService productService;
 	
 	@RequestMapping("/")
-	public String tablon(Model model) {			
+	public String index() {			
 		return "index";
 	}
 	
+	@RequestMapping("/addProduct")
+	public String addProduct() {			
+		return "addProduct";
+	}
+	
 	@RequestMapping("/add")
-	public String add(Product product, Model model) {
+	public String add(Product product) {
 		this.productService.add(product);
 		return "index";
 	}
