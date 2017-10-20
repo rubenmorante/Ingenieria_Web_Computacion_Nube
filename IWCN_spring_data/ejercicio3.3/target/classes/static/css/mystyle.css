@@ -148,3 +148,7 @@ nav {
 	#main-footer a {
 		color: white;
 	}
+	
+.notVisble {
+	visibility: hidden;
+}

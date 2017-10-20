@@ -21,6 +21,6 @@ public class Product {
 	
 	private int numCode;	
 	private String name;
-	private String des;
+	private String description;
 	private double price;
 }

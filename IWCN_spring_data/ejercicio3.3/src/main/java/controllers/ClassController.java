@@ -1,6 +1,5 @@
 package controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +11,6 @@ import services.ProductService;
 @Controller
 public class ClassController {
 	
-	@Autowired
 	private ProductService productService;
 	
 	@RequestMapping("/")
@@ -27,6 +25,8 @@ public class ClassController {
 	
 	@RequestMapping("/add")
 	public String add(Product product) {
+		System.out.println("ClassController" + product.getNumCode());
+		System.out.println(product.getName());//<-----------------------------hasta aqui funciona
 		this.productService.add(product);
 		return "index";
 	}
@@ -50,5 +50,17 @@ public class ClassController {
 		model.addAttribute("products", this.productService.findAll());
 		return "list";
 	}
+	/*
+	@RequestMapping("/editProduct")
+	public String edit (@RequestParam int numProduct, Model model) {
+		Product product = this.productService.get(numProduct);
+		model.addAttribute("product", product);
+		return "editProduct";
+	}
 
+	@RequestMapping("/edit")
+	public String edit(Product product) {
+		this.productService.add(product);
+		return "list";
+	}*/
 }

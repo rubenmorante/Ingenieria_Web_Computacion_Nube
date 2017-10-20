@@ -13,15 +13,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-import services.ProductService;
-
 @SpringBootApplication
 public class Application extends WebMvcConfigurerAdapter {	
-	
-	@Bean
-	public ProductService productService(){
-		return new ProductService();
-	}
 	
 	@Bean
 	public MessageSource messageSource() {
