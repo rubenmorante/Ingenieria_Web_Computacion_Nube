@@ -4,7 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import objects.Product;
 
-public interface ProductRepository extends CrudRepository<Product, Integer> {
+public interface ProductRepository extends CrudRepository<Product, Long> {
 
-	Product findByName(String Name);
 }

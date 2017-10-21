@@ -14,16 +14,14 @@ public class ProductService{
     //bean, no puedo hacer un bean de una inteface
 	
 	public void add(Product product){
-		System.out.println("ProductService" + product.getNumCode());
-		System.out.println(product.getName());
 		this.productRepository.save(product);
 	}
 	
-	public void remove(int num){
+	public void remove(long num){
 		this.productRepository.delete(num);
 	}
 	
-	public Product get(int num){
+	public Product get(long num){
 		return this.productRepository.findOne(num);
 	}
 
