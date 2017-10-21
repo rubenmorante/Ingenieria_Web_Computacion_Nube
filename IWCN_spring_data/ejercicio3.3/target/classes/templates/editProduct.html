@@ -1,0 +1,70 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="StyleSheet" href="/css/mystyle.css"/>
+		
+		<title th:text="#{editProduct}"></title>
+	</head>
+	<body>	
+		<header id="main-header">
+			<a id="logo-header" href="/">
+				<span class="site-name" th:text="#{titleIndex}"></span>
+				<span class="site-desc" th:text="#{nameAuthor}"></span>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="/" title="#{goToStart}" th:text="#{start}"></a></li>
+					<li><a href="/list.html" title="#{goToProductList}" th:text="#{listOfProducts}"></a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section id="main-content">
+			<div class="content">
+				<h1 th:text="#{editProduct}"></h1>
+				<div class="row col-md-2">
+					<form th:action="@{edit}" method="post">	
+						<input class="notVisble" type="number" name="id" value="${product.id}" required="required" disabled/>			
+						<div class="row">
+							<div class="col-md-1">
+								<b th:text="#{numberCode} + ':'"></b>
+							</div>
+							<div class="col-md-1">
+								<input type="number" name="numCode" value="${product.numCode}" required="required"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<b th:text="#{name} + ':'"></b>
+							</div>
+							<div class="col-md-1">					
+								<input type="text" name="name" value="${product.name}" required="required"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<b th:text="#{description} + ':'"></b>
+							</div>
+							<div class="col-md-1">
+								<input type="text" name="description" value="${product.description}" required="required"/>	
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">		
+								<b th:text="#{price} + ':'"></b>
+							</div>
+							<div class="col-md-1">
+								<input type="number" name="price" value="${product.price}" required="required"/>			
+							</div>
+						</div>
+							
+						<br></br>
+							
+						<input type="submit" name="accept" th:value="#{accept}"/>
+					</form>
+				</div>
+				<a href="/list" th:text="#{cancel}"></a>
+			</div>
+		</section>
+	</body>
+</html>

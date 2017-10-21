@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="StyleSheet" th:href="@{/css/mystyle.css}"/>
+		
+		<title th:text="#{product}"></title>
+	</head>
+	<body>	
+		<header id="main-header">
+			<a id="logo-header" href="/">
+				<span class="site-name" th:text="#{titleIndex}"></span>
+				<span class="site-desc" th:text="#{nameAuthor}"></span>
+			</a>
+			<nav>
+				<ul>
+					<li><a href="/" title="#{goToStart}" th:text="#{start}"></a></li>
+					<li><a href="/list.html" title="#{goToProductList}" th:text="#{listOfProducts}"></a></li>
+				</ul>
+			</nav>
+		</header>
+	
+		<section id="main-content">
+			<div class="content">
+				<h1 th:text="#{product}"></h1>
+			
+				<p th:text="#{numberCode} + ': ' + ${product.numCode}" />
+				<p th:text="#{name} + ': ' + ${product.name}" />
+				<p th:text="#{description} + ': ' + ${product.description}" />
+				<p th:text="#{price} + ': ' + ${product.price}" />
+			
+				<a href="/list" th:text="#{return}"></a>
+			</div>
+		</section>
+	</body>
+</html>
