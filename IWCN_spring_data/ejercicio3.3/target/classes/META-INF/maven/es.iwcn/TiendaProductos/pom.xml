@@ -7,7 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>TiendaProductos</name>
+  <name>ejercicio3.3</name>
   <description>Aplicación web de gestión de productos</description>
  
    <parent>
@@ -43,6 +43,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		
 		<dependency>
