@@ -24,8 +24,9 @@
 				<h1 th:text="#{productList}"></h1>
 				<ul>
 					<li th:each="product : ${products}">
-						<a th:href="@{/show(numProduct=${productStat.index})}"><span th:text="${product.name}"></span></a> [<a th:href="@{/delete(numProduct=${productStat.index})}" th:text="#{delete}"></a>]
-						 <!-- [<a th:href="@{/editProduct(numProduct=${productStat.index})}" th:text="#{edit}"></a>]--></li>
+						<a th:href="@{/show(numProduct=${product.id})}"><span th:text="${product.name}"></span></a>
+						 [<a th:href="@{/delete(numProduct=${product.id})}" th:text="#{delete}"></a>]
+						  [<a th:href="@{/editProduct(numProduct=${product.id})}" th:text="#{edit}"></a>]</li>
 				</ul>
 				
 				<a href="/" th:text="#{return}"></a>

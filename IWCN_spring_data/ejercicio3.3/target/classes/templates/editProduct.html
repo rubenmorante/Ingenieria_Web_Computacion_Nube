@@ -21,16 +21,16 @@
 		
 		<section id="main-content">
 			<div class="content">
-				<h1 th:text="#{editProduct}"></h1>
+				<h1 th:text="#{edit}"></h1>
 				<div class="row col-md-2">
 					<form th:action="@{edit}" method="post">	
-						<input class="notVisble" type="number" name="id" value="${product.id}" required="required" disabled/>			
+						<input type="hidden" name="id" th:field="${product.id}" required="required"/>			
 						<div class="row">
 							<div class="col-md-1">
 								<b th:text="#{numberCode} + ':'"></b>
 							</div>
 							<div class="col-md-1">
-								<input type="number" name="numCode" value="${product.numCode}" required="required"/>
+								<input type="number" name="numCode" th:field="${product.numCode}" required="required"/>
 							</div>
 						</div>
 						<div class="row">
@@ -38,7 +38,7 @@
 								<b th:text="#{name} + ':'"></b>
 							</div>
 							<div class="col-md-1">					
-								<input type="text" name="name" value="${product.name}" required="required"/>
+								<input type="text" name="name" th:field="${product.name}" required="required"/>
 							</div>
 						</div>
 						<div class="row">
@@ -46,7 +46,7 @@
 								<b th:text="#{description} + ':'"></b>
 							</div>
 							<div class="col-md-1">
-								<input type="text" name="description" value="${product.description}" required="required"/>	
+								<input type="text" name="description" th:field="${product.description}" required="required"/>	
 							</div>
 						</div>
 						<div class="row">
@@ -54,7 +54,7 @@
 								<b th:text="#{price} + ':'"></b>
 							</div>
 							<div class="col-md-1">
-								<input type="number" name="price" value="${product.price}" required="required"/>			
+								<input type="number" name="price" th:field="${product.price}" required="required"/>			
 							</div>
 						</div>
 							

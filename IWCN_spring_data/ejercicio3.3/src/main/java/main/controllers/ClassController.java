@@ -1,4 +1,4 @@
-package controllers;
+package main.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import objects.Product;
-import services.ProductService;
+import main.objects.Product;
+import main.services.ProductService;
 
 @Controller
 public class ClassController {
@@ -50,17 +50,18 @@ public class ClassController {
 		model.addAttribute("products", this.productService.findAll());
 		return "list";
 	}
-	/*
+	
 	@RequestMapping("/editProduct")
-	public String edit (@RequestParam int numProduct, Model model) {
+	public String editProduct (@RequestParam int numProduct, Model model) {
 		Product product = this.productService.get(numProduct);
 		model.addAttribute("product", product);
 		return "editProduct";
 	}
 
 	@RequestMapping("/edit")
-	public String edit(Product product) {
+	public String edit(Product product, Model model) {
 		this.productService.add(product);
+		model.addAttribute("products", this.productService.findAll());
 		return "list";
-	}*/
+	}
 }
