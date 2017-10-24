@@ -25,8 +25,8 @@
 				<ul>
 					<li th:each="product : ${products}">
 						<a th:href="@{/show(numProduct=${product.id})}"><span th:text="${product.name}"></span></a>
-						 [<a th:href="@{/delete(numProduct=${product.id})}" th:text="#{delete}"></a>]
-						  [<a th:href="@{/editProduct(numProduct=${product.id})}" th:text="#{edit}"></a>]</li>
+						 <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/delete(numProduct=${product.id})}" th:text="'[' + #{delete} + ']'"></a>
+						  <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/editProduct(numProduct=${product.id})}" th:text="'[' + #{edit} + ']'"></a></li>
 				</ul>
 				
 				<a th:href="@{home}" th:text="#{return}"></a>
