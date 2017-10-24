@@ -54,7 +54,7 @@
 								<b th:text="#{price} + ':'"></b>
 							</div>
 							<div class="col-md-1">
-								<input type="number" name="price" th:field="${product.price}" required="required"/>			
+								<input type="number" name="price" step="0.01" th:field="${product.price}" required="required"/>			
 							</div>
 						</div>
 							

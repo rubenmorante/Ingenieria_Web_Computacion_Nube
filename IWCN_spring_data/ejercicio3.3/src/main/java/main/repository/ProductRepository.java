@@ -2,7 +2,7 @@ package main.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import main.objects.Product;
+import main.model.Product;
 
 public interface ProductRepository extends CrudRepository<Product, Integer> {
 

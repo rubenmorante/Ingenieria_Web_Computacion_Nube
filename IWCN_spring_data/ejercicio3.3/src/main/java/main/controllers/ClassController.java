@@ -6,14 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import main.objects.Product;
-import main.services.ProductService;
+import main.model.Product;
+import main.services.ProductServiceDB;
 
 @Controller
 public class ClassController {
 	
 	@Autowired
-	private ProductService productService;
+	private ProductServiceDB productService;
 	
 	@RequestMapping("/")
 	public String index() {			

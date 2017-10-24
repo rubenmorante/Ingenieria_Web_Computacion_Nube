@@ -1,30 +1,14 @@
 package main.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import main.model.Product;
 
-import main.objects.Product;
-import main.repository.ProductRepository;
+public interface ProductService<T> {
 
-@Service
-public class ProductService{	
+	public void add(T element);
 	
-	@Autowired
-    private ProductRepository productRepository;
+	public void remove(int num);
 	
-	public void add(Product product){
-		this.productRepository.save(product);
-	}
-	
-	public void remove(int num){
-		this.productRepository.delete(num);
-	}
-	
-	public Product get(int num){
-		return this.productRepository.findOne(num);
-	}
+	public Product get(int num);
 
-	public Iterable<Product> findAll() {	
-		return this.productRepository.findAll();
-	}
+	public Iterable<T> findAll();
 }
