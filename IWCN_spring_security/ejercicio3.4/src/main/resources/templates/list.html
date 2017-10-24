@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="StyleSheet" th:href="@{/css/mystyle.css}"/>
+		
+		<title th:text="#{listOfProducts}"></title>
+	</head>
+	<body>	
+		<header id="main-header">
+			<a id="logo-header" th:href="@{home}">
+				<span class="site-name" th:text="#{titleIndex}"></span>
+				<span class="site-desc" th:text="#{nameAuthor}"></span>
+			</a>
+			<nav>
+				<ul>
+					<li><a th:href="@{home}" title="#{goToStart}" th:text="#{start}"></a></li>
+					<li><a th:href="@{list}" title="#{goToProductList}" th:text="#{listOfProducts}"></a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section id="main-content">
+			<div class="content">
+				<h1 th:text="#{productList}"></h1>
+				<ul>
+					<li th:each="product : ${products}">
+						<a th:href="@{/show(numProduct=${product.id})}"><span th:text="${product.name}"></span></a>
+						 <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/delete(numProduct=${product.id})}" th:text="'[' + #{delete} + ']'"></a>
+						  <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/editProduct(numProduct=${product.id})}" th:text="'[' + #{edit} + ']'"></a></li>
+				</ul>
+				
+				<a th:href="@{home}" th:text="#{return}"></a>
+			</div>
+		</section>
+	</body>
+</html>

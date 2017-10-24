@@ -7,14 +7,14 @@
 	</head>
 	<body>	
 		<header id="main-header">
-			<a id="logo-header" href="/">
+			<a id="logo-header" th:href="@{home}">
 				<span class="site-name" th:text="#{titleIndex}"></span>
 				<span class="site-desc" th:text="#{nameAuthor}"></span>
 			</a>
 			<nav>
 				<ul>
-					<li><a href="/" title="#{goToStart}" th:text="#{start}"></a></li>
-					<li><a href="/list.html" title="#{goToProductList}" th:text="#{listOfProducts}"></a></li>
+					<li><a th:href="@{home}" title="#{goToStart}" th:text="#{start}"></a></li>
+					<li><a th:href="@{list}" title="#{goToProductList}" th:text="#{listOfProducts}"></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -63,7 +63,7 @@
 						<input type="submit" name="accept" th:value="#{accept}"/>
 					</form>
 				</div>
-				<a href="/list" th:text="#{cancel}"></a>
+				<a th:href="@{list}" th:text="#{cancel}"></a>
 			</div>
 		</section>
 	</body>

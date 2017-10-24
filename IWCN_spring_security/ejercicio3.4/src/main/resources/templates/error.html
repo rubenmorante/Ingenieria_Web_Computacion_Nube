@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="StyleSheet" th:href="@{/css/mystyle.css}"/>
+		
+		<title th:text="ERROR"></title>
+	</head>
+	<body>	
+		<header id="main-header">
+			<a id="logo-header" th:href="@{home}">
+				<span class="site-name" th:text="#{titleIndex}"></span>
+				<span class="site-desc" th:text="#{nameAuthor}"></span>
+			</a>
+			<nav>
+				<ul>
+					<li><a th:href="@{home}" title="#{goToStart}" th:text="#{start}"></a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="main-content">
+			<div class="content">
+				<div class="imsgbackground">
+					<img src="../../images/SystemFailure.gif" alt="ERROR"/>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
