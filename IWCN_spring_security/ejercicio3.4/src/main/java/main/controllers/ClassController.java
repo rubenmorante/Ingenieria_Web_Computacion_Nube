@@ -1,6 +1,7 @@
 package main.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +12,15 @@ import main.model.Product;
 import main.services.ProductServiceDB;
 
 @Controller
-public class ClassController {
+public class ClassController implements ErrorController {
 	
 	@Autowired
 	private ProductServiceDB productService;
+	
+	@RequestMapping("/error")
+    public String error() {
+        return "error";
+    }
 	
 	@RequestMapping("/")
     public String welcome() {
@@ -81,5 +87,11 @@ public class ClassController {
 		this.productService.add(product);
 		model.addAttribute("products", this.productService.findAll());
 		return "list";
+	}
+
+	@Override
+	public String getErrorPath() {
+		// TODO Auto-generated method stub
+		return "/error";
 	}
 }

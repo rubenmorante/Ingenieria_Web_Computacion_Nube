@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="StyleSheet" th:href="@{/css/mystyle.css}"/>
@@ -25,8 +26,8 @@
 			<div class="content">
 				<h1 th:text="#{productStore}"></h1>
 				<ul>
-					<li><a th:href="@{list}" th:text="#{productList}"></a></li>
-					<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{addProduct}" th:text="#{newProduct}"></a></li>
+					<li><a th:href="@{list}" th:text="#{productList}"></a></li>	
+					<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{addProduct}" th:text="#{newProduct}"></a></li>					
 				</ul>
 			</div>
 		</section>
