@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: ejercicio3.5Client
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Morante
+Implementation-Vendor-Id: com.iwcn
+Build-Jdk: 1.8.0_151
+Implementation-URL: http://projects.spring.io/spring-boot/TiendaProduc
+ to/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
