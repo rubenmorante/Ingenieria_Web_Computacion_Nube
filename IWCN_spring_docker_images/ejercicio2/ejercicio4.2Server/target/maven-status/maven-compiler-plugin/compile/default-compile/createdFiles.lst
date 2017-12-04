@@ -1,0 +1,6 @@
+main/controllers/ClassController.class
+main/repository/ProductRepository.class
+main/Application.class
+main/services/ProductService.class
+main/model/Product.class
+main/services/ProductServiceDB.class
