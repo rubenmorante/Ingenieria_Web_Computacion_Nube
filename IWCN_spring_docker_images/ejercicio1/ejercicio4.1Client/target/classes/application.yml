@@ -1,0 +1,18 @@
+server:
+  port: 8443  
+  ssl:
+    key-store: keystore.jks
+    key-store-password: password
+    key-password: 123456
+
+spring:
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: validate
+
+  datasource:
+    url: jdbc:mysql://localhost/bdpractica
+    username: ruben
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
