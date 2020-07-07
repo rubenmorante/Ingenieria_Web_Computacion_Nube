@@ -1,2 +1,2 @@
 # Proyectos
-Proyectos hechos en diferentes lenguajes
+Prácticas de la asignatura Ingeniería Web y Computación en la nube
